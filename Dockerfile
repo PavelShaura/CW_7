@@ -1,17 +1,16 @@
-FROM python:3.10
+# start from an official message
+FROM python:3.10-slim
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# set work directory
+WORKDIR /code
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-
-ADD requirements.txt /usr/src/app/requirements.txt
+# install dependencies
+COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-ADD . /usr/src/app
+# copy project
 COPY . .
 
+# define the command to run when starting the container
 CMD python manage.py runserver 0.0.0.0:8000
