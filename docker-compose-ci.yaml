@@ -1,5 +1,4 @@
 version: '3.9'
-
 services:
   front:
     image: sermalenk/skypro-front:lesson-34
@@ -53,6 +52,7 @@ services:
 
 volumes:
   postgres_data:
+
 
 networks:
   db_network:

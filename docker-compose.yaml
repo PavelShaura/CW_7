@@ -12,7 +12,7 @@ services:
   api:
     build:
       context: .
-    image: my
+    image: pshaura/todolist:master
     depends_on:
       - postgresql
       - migration
@@ -41,10 +41,10 @@ services:
       - "5432:5432"
 
   migration:
-    image: my
+    image: pshaura/todolist:master
     command: python manage.py migrate --noinput
     volumes:
-      - .:/usr/src/app/
+      - ./:/usr/src/app/
     depends_on:
       - postgresql
     networks:
