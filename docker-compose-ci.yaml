@@ -12,7 +12,7 @@ services:
   api:
     build:
       context: .
-    image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    image: pshaura/todolist:$GITHUB_REF_NAME
     depends_on:
       - postgresql
       - migration
@@ -41,7 +41,7 @@ services:
       - "5432:5432"
 
   migration:
-    image: pshaura/todolist:master
+    image: pshaura/todolist:$GITHUB_REF_NAME
     command: python manage.py migrate --noinput
     volumes:
       - .:/usr/src/app/
