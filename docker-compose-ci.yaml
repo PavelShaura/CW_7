@@ -10,9 +10,7 @@ services:
       - front_network
 
   api:
-    build:
-      context: .
-    image: pshaura/todolist:$GITHUB_REF_NAME
+    image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     depends_on:
       - postgresql
       - migration
@@ -41,7 +39,7 @@ services:
       - "5432:5432"
 
   migration:
-    image: pshaura/todolist:$GITHUB_REF_NAME
+    image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     command: python manage.py migrate --noinput
     volumes:
       - .:/usr/src/app/
