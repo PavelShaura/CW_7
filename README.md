@@ -1,8 +1,8 @@
-#step-by-step PROJECT
+# step-by-step PROJECT
 ## PYTHON DEVELOPER FROM COURSE SKYPRO
 Powered by Django framework, Postgres DB.
 
-##How to launch project in development environment:**
+## How to launch project in development environment:**
 1. Create virtual environment
 2. Install dependencies from requirements.dev.txt
 > pip install -r todolist/requirements.dev.txt
@@ -33,7 +33,7 @@ Powered by Django framework, Postgres DB.
 set values and required fields
 2. Access admin site at http://127.0.0.1:8000/admin/
 3. 
-##How to launch project in development with Docker-compose
+## How to launch project in development with Docker-compose
 1. Create .docker_env file in deploy folder:
 ***you can copy the default variables from todolist/.env.example
 make sure to set DB_HOST to db which is a container name***
@@ -49,7 +49,7 @@ migrations would apply
 api container would start
 front container would start***
 
-##Deploy
+## Deploy
 1. Deploy is automated with github actions.
 2. Project files used:
 
