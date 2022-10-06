@@ -15,7 +15,7 @@ services:
       - postgresql
       - migration
     volumes:
-      - ./.docker_env:/usr/src/app/.env
+      - ./.env:/usr/src/app/.env
     ports:
       - 8080:8000
     env_file:
@@ -42,7 +42,7 @@ services:
     image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     command: python manage.py migrate --noinput
     volumes:
-      - ./.docker_env:/usr/src/app/.env
+      - ./.env:/usr/src/app/.env
     depends_on:
       - postgresql
     networks:
