@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.8'
 services:
   frontend:
     image: sermalenk/skypro-front:lesson-34
@@ -15,7 +15,7 @@ services:
       - postgresql
       - migration
     volumes:
-      - ./:/usr/src/app/
+      - ./.docker_env:/usr/src/app/.env
     ports:
       - 8080:8000
     env_file:
@@ -25,7 +25,7 @@ services:
       - db_network
 
   postgresql:
-    image: postgres:12.4-alpine
+    image: postgres:13-alpine
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
     environment:
@@ -42,7 +42,7 @@ services:
     image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     command: python manage.py migrate --noinput
     volumes:
-      - ./:/usr/src/app/
+      - ./.docker_env:/usr/src/app/.env
     depends_on:
       - postgresql
     networks:
