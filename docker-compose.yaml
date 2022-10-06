@@ -1,7 +1,6 @@
 version: '3.9'
 
 services:
-
   frontend:
     image: sermalenk/skypro-front:lesson-34
     ports:
@@ -19,7 +18,7 @@ services:
     ports:
       - "8080:8000"
     volumes:
-      - ./:/usr/src/app/todolist/
+      - ./:/usr/src/app/
     networks:
       - front_network
       - db_network
@@ -30,7 +29,7 @@ services:
     depends_on:
       - postgresql
     volumes:
-      - ./:/usr/src/app/todolist/
+      - ./:/usr/src/app/
     networks:
       - db_network
     command: python manage.py migrate --noinput
