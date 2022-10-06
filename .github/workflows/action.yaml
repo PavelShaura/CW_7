@@ -4,7 +4,7 @@ jobs:
   build_and_push:
     runs-on: ubuntu-latest
     steps:
-      - name: clone code
+      - name: clone cod
         uses: actions/checkout@v2
       - name: docker build
         run: docker build -t pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
