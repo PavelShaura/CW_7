@@ -25,7 +25,7 @@ services:
       - db_network
 
   postgresql:
-    image: postgres:13-alpine
+    image: postgres:12.4-alpine
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
     environment:
