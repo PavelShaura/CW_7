@@ -31,7 +31,7 @@ jobs:
         run:  | 
           mkdir deploy
           cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
-          cat .ci_env | envsubst > deploy/.env
+          cat .ci-env | envsubst > deploy/.env
       - name: copy files to server
         uses: appleboy/scp-action@master
         with:
