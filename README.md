@@ -1,4 +1,4 @@
-#step-by-step PROJECT
+# step-by-step PROJECT
 ## PYTHON DEVELOPER FROM COURSE SKYPRO
 Powered by Django framework, Postgres DB.
 
