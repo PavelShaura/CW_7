@@ -11,6 +11,7 @@ Powered by Django framework, Postgres DB.
 > create .env file in todolist folder
 > 
 **you can copy the default variables from todolist/.env.example**
+
 4. Launch database from deploy folder
 > cd deploy
 > 
