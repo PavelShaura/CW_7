@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 ADD . /usr/src/app
 COPY . .
 
-CMD python manage.py runserver 0.0.0.0:8000
+CMD python manage.py runserver http://coder.pp.ru:8000
