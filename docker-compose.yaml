@@ -19,7 +19,7 @@ services:
     ports:
       - "8080:8000"
     volumes:
-      - ./:/usr/src/app/
+      - ./:/usr/src/app/todolist/
     networks:
       - front_network
       - db_network
@@ -30,7 +30,7 @@ services:
     depends_on:
       - postgresql
     volumes:
-      - ./:/usr/src/app/
+      - ./:/usr/src/app/todolist/
     networks:
       - db_network
     command: python manage.py migrate --noinput
