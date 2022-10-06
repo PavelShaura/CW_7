@@ -25,7 +25,7 @@ jobs:
       DB_USER: ${{ secrets.DB_USER }}
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
     steps:
-      - name: clone code
+      - name: clone cod
         uses: actions/checkout@v2
       - name: render docker-compose
         run:  | 
