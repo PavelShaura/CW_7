@@ -3,7 +3,7 @@
 Powered by Django framework, Postgres DB.
 
 ## How to launch project in development environment:**
-1. Create virtual environment
+**1. Create virtual environment**
 2. Install dependencies from requirements.dev.txt
 > pip install -r todolist/requirements.dev.txt
 > 
