@@ -1,5 +1,4 @@
-version: '3.8
-
+version: '3.8'
 services:
   frontend:
     image: sermalenk/skypro-front:lesson-34
@@ -9,7 +8,6 @@ services:
       - api
     networks:
       - front_network
-
   api:
     build: .
     depends_on:
@@ -22,8 +20,6 @@ services:
     networks:
       - front_network
       - db_network
-
-
   migrations:
     build: .
     depends_on:
@@ -33,10 +29,9 @@ services:
     networks:
       - db_network
     command: python manage.py migrate --noinput
-      
 
   postgresql:
-    image: postgres:13-alpine
+    image: postgres:12.4-alpine
     volumes:
       - ./postgres_data:/var/lib/postgresql/datata
     environment:
@@ -48,12 +43,8 @@ services:
       - "5432:5432"
     networks:
       - db_network
-
-
 volumes:
   postgres_data:
-
-
 networks:
   db_network:
   front_network:
