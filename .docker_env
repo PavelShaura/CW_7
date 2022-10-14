@@ -1,0 +1,11 @@
+SECRET_KEY=ze4&e&wu-*^h_+zp4@77g6c#y0o%&m22c!8i8wgcn69r!fpb=f
+DEBUG_MODE=False
+
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=postgres_db
+DB_USER=postgres
+DB_PASSWORD=kjdf8kmel45kf
+DB_HOST=postgresql
+DB_PORT=5432
+VK_OAUTH2_KEY=51449357
+VK_OAUTH2_SECRET=N6Z4L8HmiELg63Gg1XkU
