@@ -32,7 +32,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG_MODE')
+DEBUG = env.bool('DEBUG_MODE')
 
 ALLOWED_HOSTS = ['*']
 
@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': env.str('DB_ENGINE'),
         'NAME': env.str('DB_NAME'),
         'USER': env.str('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
+        'PASSWORD': env.str('DB_PASSWORD'),
         'HOST': env.str('DB_HOST'),
         'PORT': env.int('DB_PORT'),
     }
