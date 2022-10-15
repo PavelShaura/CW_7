@@ -175,3 +175,9 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+SOCIAL_AUTH_PIPELINE = (
+    '...',
+    'social_core.pipeline.user.user_details',
+    '...',
+)
