@@ -11,25 +11,15 @@ class SignupView(generics.CreateAPIView):
     serializer_class = CreateUserSerializer
 
 
-class LoginView(CreateAPIView):
+class LoginView(generics.CreateAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
-        # validate request data
         serializer = self.get_serializer(data=request.data)
-
-        if not serializer.is_valid():
-            return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        username = request.data.get('username')
-        password = request.data.get('password')
-        user = authenticate(request, username=username, password=password)
-
-        if user:
-            login(request, user)
-            return Response(status=status.HTTP_200_OK)
-
-        return Response(data={'password': ['Invalid password']}, status=status.HTTP_400_BAD_REQUEST)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        login(request=request, user=user)
+        return Response(ProfileSerializer(user).data)
 
 
 class ProfileView(generics.RetrieveUpdateDestroyAPIView):
