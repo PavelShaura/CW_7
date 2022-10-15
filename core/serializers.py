@@ -4,6 +4,11 @@ from core.models import User
 
 
 class SignUpSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'password']
+
     id = serializers.IntegerField(required=False)
     username = serializers.CharField(required=True, max_length=50)
     first_name = serializers.CharField(required=False, allow_blank=True, max_length=50)
@@ -42,9 +47,7 @@ class SignUpSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'password']
+
 
 
 class LoginSerializer(serializers.Serializer):
