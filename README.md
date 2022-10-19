@@ -1,8 +1,8 @@
 # TODOLIST PROJECT
 
 Powered by Django Rest framework, Postgres and Docker.
-
-##The functionality of the program:
+ 
+## The functionality of the program:
 
 > ***The graphical user interface for working with goals is a board, where each goal is a card on this board.***
 
@@ -45,7 +45,7 @@ Search:
 
 You can search by entering the text in the name of the card.
 
-##**Working with a goal**
+## **Working with a goal**
 
 Clicking on the card opens the detailed view of the goal screen. On it , the user can:
 
