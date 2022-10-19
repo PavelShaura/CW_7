@@ -5,6 +5,12 @@ Powered by Django Rest framework, Postgres and Docker.
 ## The functionality of the program:
 
 > ### ***The graphical user interface for working with goals is a board, where each goal is a card on this board.***
+> **Addresses:**
+
+> front: http://coder.pp.ru/auth
+> admin: http://coder.pp.ru/admin/
+
+
 
 ## **Board:**
 
@@ -190,9 +196,4 @@ variables in compose and env files are replaced with github secrets***
 > 
 > ./manage.py createsuperuser
 > 
-
-**5. Addresses:**
-
-> front: http://coder.pp.ru/auth
-admin: http://coder.pp.ru/admin/
 
