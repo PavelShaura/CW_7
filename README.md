@@ -6,7 +6,7 @@ Powered by Django Rest framework, Postgres and Docker.
 
 > ***The graphical user interface for working with goals is a board, where each goal is a card on this board.***
 
-##**Board:**
+## **Board:**
 
 The board is divided into 3 columns by status.
 
@@ -87,7 +87,7 @@ The text of the comment.
 The date the comment was created.
 The date the comment was updated (if it does not match the creation date).
 
-##**Interface for categories**
+## **Interface for categories**
 
 There is a separate interface for working with categories:
 
