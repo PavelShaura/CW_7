@@ -10,11 +10,12 @@ Powered by Django Rest framework, Postgres and Docker.
 
 The board is divided into 3 columns by status.
 
-1./ To fulfill — goals that the user simply adds up, but does not proceed to them (some kind of "backlog").
+**1. To fulfill — goals that the user simply adds up, but does not proceed to them (some kind of "backlog").**
 
-2./ In work — the goals that the user is currently trying to achieve.
+**2. In work — the goals that the user is currently trying to achieve.**
 
-3./ Completed — goals that have been achieved.
+**3. Completed — goals that have been achieved.**
+
 So that the achieved goals do not score the whole board,
 it is possible to assign them a special status "In the archive". 
 Then they will not be displayed on the board, but you can return to them using the Archive page.
