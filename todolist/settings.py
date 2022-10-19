@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'social_django',
     'core',
+    'goals',
     'drf_spectacular',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -141,6 +143,8 @@ USE_I18N = True
 USE_TZ = True
 
 REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
@@ -161,7 +165,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'core.User'
 
-# vkontakte authorization(social-auth-app-django)
+# vkontakte authorization
 
 SOCIAL_AUTH_JSONFIELD_ENABLED = True
 SOCIAL_AUTH_JSONFIELD_CUSTOM = 'django.db.models.JSONField'

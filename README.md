@@ -1,6 +1,106 @@
-# step-by-step PROJECT
-## PYTHON DEVELOPER FROM COURSE SKYPRO
-Powered by Django framework, Postgres DB.
+# TODOLIST PROJECT
+
+Powered by Django Rest framework, Postgres and Docker.
+
+##The functionality of the program:
+
+> ***The graphical user interface for working with goals is a board, where each goal is a card on this board.***
+
+##**Board:**
+
+The board is divided into 3 columns by status.
+
+1./ To fulfill — goals that the user simply adds up, but does not proceed to them (some kind of "backlog").
+
+2./ In work — the goals that the user is currently trying to achieve.
+
+3./ Completed — goals that have been achieved.
+So that the achieved goals do not score the whole board,
+it is possible to assign them a special status "In the archive". 
+Then they will not be displayed on the board, but you can return to them using the Archive page.
+
+On each card you can see:
+
+The name of the goal.
+Priority:
+low,
+medium,
+high,
+critical.
+Deadline date — if the deadline date is greater than the current date, the card should be displayed as overdue.
+Category — combining goals according to a convenient criterion, for example, the categories "Personal", "Work", "Health", "Finance".
+
+Sorting, filtering and search functions:
+
+Sorting:
+
+By default, the cards in each column are sorted by priority (in order of importance) and deadline date.
+It should be possible to sort cards by deadline date without taking into account priority.
+Filtering:
+
+Cards can be filtered by category/categories.
+Cards can be filtered by priority/priorities.
+Cards can be filtered by the deadline date.
+Search:
+
+You can search by entering the text in the name of the card.
+
+##**Working with a goal**
+
+Clicking on the card opens the detailed view of the goal screen. On it , the user can:
+
+See detailed information about the goal.
+Title.
+Description.
+Category.
+Status.
+Priority.
+The deadline date.
+Date of creation.
+The date of the last update.
+
+Edit the goal:
+
+Title.
+Description.
+Category.
+Status.
+Priority.
+The deadline date.
+
+When editing a goal, the update date should change.
+
+Archive the target.
+Give her the status "In the archive", and then she will leave the board.
+
+Work with comments:
+
+Comments are needed to add notes, links, files, photos, and anything on the topic to the goal.
+
+Create comments.
+Edit comments.
+Delete comments.
+View the list of comments:
+Sort by creation date in descending order (the most recent ones are at the top).
+Display:
+The text of the comment.
+The date the comment was created.
+The date the comment was updated (if it does not match the creation date).
+
+##**Interface for categories**
+
+There is a separate interface for working with categories:
+
+1. Creating a category.
+
+2. Editing a category.
+
+3. View the list of categories.
+
+4. Deleting a category.
+
+
+
 
 ## How to launch project in development environment:
 
@@ -94,3 +194,4 @@ back: pshaura/todolist_project:***
 
 > front: http://coder.pp.ru/auth
 admin: http://coder.pp.ru/admin/
+
