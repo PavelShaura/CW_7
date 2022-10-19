@@ -31,9 +31,8 @@ critical.
 Deadline date — if the deadline date is greater than the current date, the card should be displayed as overdue.
 Category — combining goals according to a convenient criterion, for example, the categories "Personal", "Work", "Health", "Finance".
 
-Sorting, filtering and search functions:
+**Sorting, filtering and search functions:**
 
-Sorting:
 
 By default, the cards in each column are sorted by priority (in order of importance) and deadline date.
 It should be possible to sort cards by deadline date without taking into account priority.
