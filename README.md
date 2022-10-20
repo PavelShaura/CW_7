@@ -1,20 +1,28 @@
 # TODOLIST PROJECT
 
 Powered by Django Rest framework, Postgres and Docker.
+ 
+## The functionality of the program:
 
-##The functionality of the program:
+> ### ***The graphical user interface for working with goals is a board, where each goal is a card on this board.***
+> **Addresses:**
 
-> ***The graphical user interface for working with goals is a board, where each goal is a card on this board.***
+> http://coder.pp.ru/auth
+> 
+> admin: http://coder.pp.ru/admin/
 
-##**Board:**
+
+
+## **Board:**
 
 The board is divided into 3 columns by status.
 
-1./ To fulfill — goals that the user simply adds up, but does not proceed to them (some kind of "backlog").
+**1. To fulfill — goals that the user simply adds up, but does not proceed to them (some kind of "backlog").**
 
-2./ In work — the goals that the user is currently trying to achieve.
+**2. In work — the goals that the user is currently trying to achieve.**
 
-3./ Completed — goals that have been achieved.
+**3. Completed — goals that have been achieved.**
+
 So that the achieved goals do not score the whole board,
 it is possible to assign them a special status "In the archive". 
 Then they will not be displayed on the board, but you can return to them using the Archive page.
@@ -30,9 +38,8 @@ critical.
 Deadline date — if the deadline date is greater than the current date, the card should be displayed as overdue.
 Category — combining goals according to a convenient criterion, for example, the categories "Personal", "Work", "Health", "Finance".
 
-Sorting, filtering and search functions:
+**Sorting, filtering and search functions:**
 
-Sorting:
 
 By default, the cards in each column are sorted by priority (in order of importance) and deadline date.
 It should be possible to sort cards by deadline date without taking into account priority.
@@ -45,7 +52,7 @@ Search:
 
 You can search by entering the text in the name of the card.
 
-##**Working with a goal**
+## **Working with a goal**
 
 Clicking on the card opens the detailed view of the goal screen. On it , the user can:
 
@@ -87,7 +94,7 @@ The text of the comment.
 The date the comment was created.
 The date the comment was updated (if it does not match the creation date).
 
-##**Interface for categories**
+## **Interface for categories**
 
 There is a separate interface for working with categories:
 
@@ -178,8 +185,9 @@ variables in compose and env files are replaced with github secrets***
 
 **3. Docker hub images:**
 
-***front: sermalenk/skypro-front:lesson-34
-back: pshaura/todolist_project:***
+> ***front: sermalenk/skypro-front:lesson-36***
+
+> ***back: pshaura/todolist_project:***
 
 **4. To add admin during first launch:**
 
@@ -189,9 +197,4 @@ back: pshaura/todolist_project:***
 > 
 > ./manage.py createsuperuser
 > 
-
-**5. Addresses:**
-
-> front: http://coder.pp.ru/auth
-admin: http://coder.pp.ru/admin/
 
