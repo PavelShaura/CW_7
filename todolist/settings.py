@@ -97,7 +97,7 @@ DATABASES = {
         'PORT': env.int('DB_PORT'),
     }
 }
-# Localy uses for tests:
+# Local useless needed:
 
 # DATABASES = {
 #     'default': {
