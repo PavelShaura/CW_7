@@ -1,10 +1,9 @@
 from django.urls import path
-
-from core.views import LoginView, ProfileView, SignupView, UpdatePasswordView
+from .views import SignUpView, LoginView, UserRetrieveUpdateView, PasswordUpdateView
 
 urlpatterns = [
-    path('signup', SignupView.as_view(), name='signup'),
-    path('login', LoginView.as_view(), name='login'),
-    path('profile', ProfileView.as_view(), name='profile'),
-    path('update_password', UpdatePasswordView.as_view(), name='update-password'),
+    path('signup', SignUpView.as_view()),
+    path('login', LoginView.as_view()),
+    path('profile', UserRetrieveUpdateView.as_view()),
+    path('update_password', PasswordUpdateView.as_view())
 ]

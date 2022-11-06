@@ -1,48 +1,73 @@
-from django.contrib.auth import login, logout, authenticate
-from rest_framework import generics, permissions, status
-from rest_framework.generics import CreateAPIView
+from django.contrib.auth import authenticate, login, logout
+from rest_framework import status
+from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from core.models import User
-from core.serializers import CreateUserSerializer, LoginSerializer, ProfileSerializer, UpdatePasswordSerializer
+from .models import User
+from .serializers import SignUpSerializer, RetrieveUpdateSerializer, PasswordUpdateSerializer, LoginSerializer
 
 
-class SignupView(generics.CreateAPIView):
-    serializer_class = CreateUserSerializer
+class SignUpView(CreateAPIView):
+    """Create new user"""
+    queryset = User.objects.all()
+    serializer_class = SignUpSerializer
 
 
-class LoginView(generics.CreateAPIView):
+class LoginView(CreateAPIView):
+    """Login user"""
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
+        # validate request data
         serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
-        login(request=request, user=user)
-        return Response(ProfileSerializer(user).data)
+
+        if not serializer.is_valid():
+            return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        # authenticate
+        username = request.data.get('username')
+        password = request.data.get('password')
+        user = authenticate(request, username=username, password=password)
+
+        # login
+        if user:
+            login(request, user)
+            return Response(status=status.HTTP_200_OK)
+
+        return Response(data={'password': ['Invalid password']}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class ProfileView(generics.RetrieveUpdateDestroyAPIView):
+class UserRetrieveUpdateView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
-    serializer_class = ProfileSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = RetrieveUpdateSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_object(self):
         return self.request.user
 
     def delete(self, request, *args, **kwargs):
         logout(request)
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_200_OK)
 
 
-class UpdatePasswordView(generics.UpdateAPIView):
-    permission_classes = [permissions.IsAuthenticated]
-    serializer_class = UpdatePasswordSerializer
+class PasswordUpdateView(UpdateAPIView):
+    serializer_class = PasswordUpdateSerializer
+    model = User
+    permission_classes = [IsAuthenticated]
 
     def get_object(self):
         return self.request.user
 
-    def get_serializer_context(self):
-        context = super().get_serializer_context()
-        context.update({'request': self.request})
-        return context
+    def update(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        serializer = self.get_serializer(data=request.data)
+
+        if serializer.is_valid():
+            if not self.object.check_password(serializer.data.get('old_password')):
+                return Response({"old_password": ["Wrong password passed, try again."]}, status=status.HTTP_400_BAD_REQUEST)
+            self.object.set_password(serializer.data.get('new_password'))
+            self.object.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

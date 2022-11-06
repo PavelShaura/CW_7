@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   frontend:
-    image: sermalenk/skypro-front:lesson-37
+    image: sermalenk/skypro-front:lesson-38
     ports:
       - "8000:80"
     depends_on:
