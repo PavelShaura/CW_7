@@ -30,6 +30,18 @@ services:
       - db_network
     command: python manage.py migrate --noinput
 
+
+  bot:
+    build: .
+    depends_on:
+      - postgresql
+      - migrations
+    volumes:
+      - ./.docker_env:/usr/src/app/.env
+    networks:
+      - db_network
+    command: python manage.py runbot
+
   postgresql:
     image: postgres:12.4-alpine
     volumes:
