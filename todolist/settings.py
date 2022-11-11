@@ -118,22 +118,22 @@ AUTH_USER_MODEL = 'core.User'
 
 #for SQL logging
 
-LOGGING = {
-    'version': 1,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.db.backends': {
-            'level': 'DEBUG',
-        },
-    },
-    'root': {
-        'handlers': ['console'],
-    }
-}
+# LOGGING = {
+#     'version': 1,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'level': 'DEBUG',
+#         },
+#     },
+#     'root': {
+#         'handlers': ['console'],
+#     }
+# }
 
 SOCIAL_AUTH_JSONFIELD_ENABLED = True
 SOCIAL_AUTH_VK_OAUTH2_KEY = env.int('VK_OAUTH2_KEY')
