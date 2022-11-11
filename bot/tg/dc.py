@@ -27,14 +27,14 @@ class Message(BaseModel):
         allow_population_by_field_name = True
 
 
-class UpdateObjet(BaseModel):
+class UpdateObj(BaseModel):
     update_id: int
     message: Message
 
 
-class GetUpdatesResponse(BaseModel):
+class GetUpdateResponse(BaseModel):
     ok: bool
-    result: list[UpdateObjet] = []
+    result: list[UpdateObj] = []
 
 
 class SendMessageResponse(BaseModel):

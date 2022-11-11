@@ -23,18 +23,18 @@ services:
       - front_network
       - db_network
 
-  bot:
-    image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
-    depends_on:
-      - postgresql
-      - migrations
-    volumes:
-      - ./.docker_env:/usr/src/app/.env
-    networks:
-      - db_network
-    restart: always
-    command: python manage.py runbot
-
+#  bot:
+#    image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+#    depends_on:
+#      - postgresql
+#      - migrations
+#    volumes:
+#      - ./.docker_env:/usr/src/app/.env
+#    networks:
+#      - db_network
+#    restart: always
+#    command: python manage.py runbot
+#
 
   postgresql:
     image: postgres:12.4-alpine
