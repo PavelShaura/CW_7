@@ -3,8 +3,6 @@ import os
 from datetime import datetime
 from enum import IntEnum, auto
 
-from pydantic import BaseModel
-
 from django.core.management import BaseCommand
 
 from bot.models import TgUser
@@ -157,6 +155,3 @@ class Command(BaseCommand):
             for item in res.result:
                 offset = item.update_id + 1
                 self.handle_message(message=item.message)
-                # ehobot
-                # self.tg_client.send_message(chat_id=item.message.chat.id, text=item.message.text)
-                print(item.message)
