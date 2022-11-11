@@ -30,7 +30,6 @@ services:
       - db_network
     command: python manage.py migrate --noinput
 
-
   bot:
     build: .
     depends_on:
