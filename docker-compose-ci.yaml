@@ -27,7 +27,6 @@ services:
     image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     depends_on:
       - postgresql
-      - migrations
     volumes:
       - ./.docker_env:/usr/src/app/.env
     networks:
