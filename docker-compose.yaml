@@ -35,7 +35,6 @@ services:
     build: .
     depends_on:
       - postgresql
-      - migrations
     volumes:
       - ./.docker_env:/usr/src/app/.env
     networks:
