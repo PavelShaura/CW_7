@@ -44,7 +44,7 @@ jobs:
           source: "deploy/docker-compose.yaml,deploy/.env"
           target: "todolist"
           strip_components: 1
-      - name: deploy ap
+      - name: deploy app
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
