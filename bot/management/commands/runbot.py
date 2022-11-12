@@ -155,3 +155,4 @@ class Command(BaseCommand):
             for item in res.result:
                 offset = item.update_id + 1
                 self.handle_message(message=item.message)
+                print(item)
