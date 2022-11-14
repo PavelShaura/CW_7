@@ -27,7 +27,6 @@ jobs:
       VK_OAUTH2_KEY: ${{ secrets.VK_OAUTH2_KEY }}
       VK_OAUTH2_SECRET: ${{ secrets.VK_OAUTH2_SECRET }}
       TG_TOKEN: ${{ secrets.TG_TOKEN }}
-      PORT: ${{ PORT }}
     steps:
       - name: clone code
         uses: actions/checkout@v2
