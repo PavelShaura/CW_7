@@ -36,7 +36,7 @@ jobs:
           cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
           cat .ci-env | envsubst > deploy/.env
       - name: copy files to server
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@m0.1.3
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
@@ -45,7 +45,7 @@ jobs:
           target: "todolist"
           strip_components: 1
       - name: deploy app
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@0.1.3
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
