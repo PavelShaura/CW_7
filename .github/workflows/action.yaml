@@ -42,6 +42,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
           source: "deploy/docker-compose.yaml,deploy/.env"
           target: "todolist"
           strip_components: 1
@@ -51,6 +52,8 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
           script: |
             cd todolist
             echo ${{ secrets.SERVER_PASSWORD }} | docker-compose up -d
