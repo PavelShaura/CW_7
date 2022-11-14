@@ -27,6 +27,7 @@ jobs:
       VK_OAUTH2_KEY: ${{ secrets.VK_OAUTH2_KEY }}
       VK_OAUTH2_SECRET: ${{ secrets.VK_OAUTH2_SECRET }}
       TG_TOKEN: ${{ secrets.TG_TOKEN }}
+      SSH_PRIVATE_KEY: ${{ SSH_PRIVATE_KEY }}
     steps:
       - name: clone code
         uses: actions/checkout@v2
@@ -41,6 +42,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "deploy/docker-compose.yaml,deploy/.env"
           target: "todolist"
           strip_components: 1
@@ -50,6 +52,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd todolist
             echo ${{ secrets.SERVER_PASSWORD }} | docker-compose up -d
