@@ -11,9 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # SECRET_KEY = env('SECRET_KEY')
-SECRET_KEY = mf#-i6c^n)m$gdo4+cj=vifal(3k#)krmqd_mn0*@t(_acf&$h
-
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
+SECRET_KEY = 'mf#-i6c^n)m$gdo4+cj=vifal(3k#)krmqd_mn0*@t(_acf&$h'
 
 DEBUG = env.bool('DEBUG_MODE')
 
