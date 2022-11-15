@@ -13,8 +13,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # SECRET_KEY = env('SECRET_KEY')
 SECRET_KEY = 'mf#-i6c^n)m$gdo4+cj=vifal(3k#)krmqd_mn0*@t(_acf&$h'
 
-DEBUG = env.bool('DEBUG_MODE')
-
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
