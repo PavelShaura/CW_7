@@ -45,16 +45,13 @@ services:
     networks:
       - db_network
 
-#  bot:
-#    image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
-#    depends_on:
-#      - postgresql
-#    volumes:
-#      - ./.docker_env:/usr/src/app/.env
-#    networks:
-#      - db_network
-#    restart: always
-#    command: python manage.py runbot
+  bot:
+    image: pshaura/todolist_project:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    depends_on:
+      - postgresql
+    networks:
+      - db_network
+    command: python manage.py runbot
 
 volumes:
   postgres_data:
