@@ -1,0 +1,12 @@
+SECRET_KEY=mf#-i6c^n)m$gdo4+cj=vifal(3k#)krmqd_mn0*@t(_acf&$h
+DEBUG_MODE=True
+
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=postgres_db
+DB_USER=postgres
+DB_PASSWORD=kjdf8kmel45kf
+DB_HOST=postgresql
+DB_PORT=5432
+VK_OAUTH2_KEY=51449357
+VK_OAUTH2_SECRET=N6Z4L8HmiELg63Gg1XkU
+TG_TOKEN=5665878770:AAHjvaMMzhiQTeNf-0auWKqm3OlyfLPLhLE
