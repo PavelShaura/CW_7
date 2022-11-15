@@ -1,19 +1,15 @@
-import os
 from pathlib import Path
-
-import environ
-
-
-env = environ.Env(DEBUG=(bool, False))
+from envparse import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+ENV_PATH = BASE_DIR.joinpath('.env')
 
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+if ENV_PATH.exists() and ENV_PATH.is_file():
+    env.read_envfile(ENV_PATH)
 
-# SECRET_KEY = env('SECRET_KEY')
-SECRET_KEY = 'mf#-i6c^n)m$gdo4+cj=vifal(3k#)krmqd_mn0*@t(_acf&$h'
+SECRET_KEY = env.str('SECRET_KEY')
 
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
