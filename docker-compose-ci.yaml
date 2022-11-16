@@ -51,6 +51,8 @@ services:
       - postgresql
     networks:
       - db_network
+    volumes:
+      - ./.env:/usr/src/app/.env
     command: python manage.py runbot
 
 volumes:

@@ -36,6 +36,8 @@ services:
       - postgresql
     networks:
       - db_network
+    volumes:
+      - ./.docker_env:/usr/src/app/.env
     command: python manage.py runbot
 
   postgresql:
