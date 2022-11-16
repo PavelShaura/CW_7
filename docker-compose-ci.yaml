@@ -42,6 +42,7 @@ services:
     volumes:
       - ./.env:/code/.env
     networks:
+      - todolist_front_network
       - todolist_db_network
     restart: always
     command: python manage.py runbot
@@ -56,6 +57,7 @@ services:
       POSTGRES_DB: ${DB_NAME}
     restart: always
     networks:
+      - todolist_front_network
       - todolist_db_network
 
 
