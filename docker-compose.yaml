@@ -29,8 +29,7 @@ services:
   migrations:
     build: .
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     volumes:
       - ./.docker_env:/code/.env
     networks:
