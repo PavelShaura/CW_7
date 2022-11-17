@@ -23,8 +23,9 @@ class Message(BaseModel):
     chat: Chat
     text: str | None = None
 
-    class Config:
-        allow_population_by_field_name = True
+
+class Config:
+    allow_population_by_field_name = True
 
 
 class UpdateObj(BaseModel):
