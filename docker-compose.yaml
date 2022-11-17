@@ -1,39 +1,39 @@
-version: '3.8'
+version: '3.9'
 
 services:
 
   frontend:
     image: sermalenk/skypro-front:lesson-38
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
-      - db
+      - postgresql
       - api
     networks:
-      - todolist_front_network
+      - front_network
 
   api:
     build: .
     depends_on:
       - migrations
-      - db
+      - postgresql
     ports:
       - "8000:8000"
     volumes:
       - ./.docker_env:/code/.env
     networks:
-      - todolist_front_network
-      - todolist_db_network
+      - front_network
+      - db_network
 
 
   migrations:
     build: .
     depends_on:
-      - db
+      - postgresql
     volumes:
       - ./.docker_env:/code/.env
     networks:
-      - todolist_db_network
+      - db_network
     command: python manage.py migrate --noinput
 
 
@@ -41,33 +41,31 @@ services:
     build: .
     depends_on:
       - migrations
-      - db
+      - postgresql
     volumes:
       - ./.docker_env:/code/.env
     networks:
-      - todolist_front_network
-      - todolist_db_network
+      - db_network
     command: python manage.py runbot
 
-  db:
+  postgresql:
     image: postgres:12.4-alpine
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - ./postgres_data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
-      POSTGRES_HOST_AUTH_METHOD: trust
     restart: always
     ports:
       - "5432:5432"
     networks:
-      - todolist_db_network
+      - db_network
 
 volumes:
-  postgres:
+  postgres_data:
 
 
 networks:
-  todolist_db_network:
-  todolist_front_network:
+  db_network:
+  front_network:

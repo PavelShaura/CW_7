@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
 
@@ -42,12 +42,11 @@ services:
     volumes:
       - ./.env:/code/.env
     networks:
-      - todolist_front_network
       - todolist_db_network
     restart: always
     command: python manage.py runbot
 
-  db:
+  postgresql:
     image: postgres:12.4-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -55,10 +54,8 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
-      POSTGRES_HOST_AUTH_METHOD: trust
     restart: always
     networks:
-      - todolist_front_network
       - todolist_db_network
 
 
