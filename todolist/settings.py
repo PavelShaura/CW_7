@@ -196,6 +196,5 @@ SPECTACULAR_SETTINGS = {
 }
 
 TG_TOKEN = env('TG_TOKEN')
-print(os.environ)
 
 
