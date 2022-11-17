@@ -19,7 +19,7 @@ services:
       - migrations
       - postgresql
     volumes:
-      - ./.docker_env:/code/.env
+      - ./.env:/code/.env
     networks:
       - todolist_front_network
       - todolist_db_network
@@ -29,7 +29,7 @@ services:
     depends_on:
       - postgresql
     volumes:
-      - ./.docker_env:/code/.env
+      - ./.env:/code/.env
     networks:
       - todolist_db_network
     command: python manage.py migrate --noinput
@@ -40,7 +40,7 @@ services:
       - migrations
       - postgresql
     volumes:
-      - ./.docker_env:/code/.env
+      - ./.env:/code/.env
     networks:
       - todolist_db_network
     restart: always
