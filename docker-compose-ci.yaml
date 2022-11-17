@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - db
+      - postgresql
       - api
     networks:
       - todolist_front_network
@@ -17,7 +17,7 @@ services:
     image: pshaura/todolist_project:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
     depends_on:
       - migrations
-      - db
+      - postgresql
     volumes:
       - ./.env:/code/.env
     networks:
@@ -27,7 +27,7 @@ services:
   migrations:
     image: pshaura/todolist_project:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
     depends_on:
-      - db
+      - postgresql
     volumes:
       - ./.env:/code/.env
     networks:
@@ -38,7 +38,7 @@ services:
     image: pshaura/todolist_project:${GITHUB_REF_NAME}-${GITHUB_RUN_ID}
     depends_on:
       - migrations
-      - db
+      - postgresql
     volumes:
       - ./.env:/code/.env
     networks:
