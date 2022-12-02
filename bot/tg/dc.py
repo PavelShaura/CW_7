@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from pydantic.schema import List
 
 
 class MessageFrom(BaseModel):
@@ -23,9 +24,8 @@ class Message(BaseModel):
     chat: Chat
     text: str | None = None
 
-
-class Config:
-    allow_population_by_field_name = True
+    class Config:
+        allow_population_by_field_name = True
 
 
 class UpdateObj(BaseModel):
@@ -35,7 +35,7 @@ class UpdateObj(BaseModel):
 
 class GetUpdateResponse(BaseModel):
     ok: bool
-    result: list[UpdateObj] = []
+    result: List[UpdateObj] = []
 
 
 class SendMessageResponse(BaseModel):

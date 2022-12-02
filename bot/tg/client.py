@@ -1,4 +1,5 @@
 import requests
+from pydantic import ValidationError
 
 from bot.tg.dc import GetUpdateResponse, SendMessageResponse
 
@@ -19,4 +20,3 @@ class TgClient:
         url = self.get_url('sendMessage')
         response = requests.post(url, json={'chat_id': chat_id, 'text': text})
         return SendMessageResponse(**response.json())
-
