@@ -28,7 +28,7 @@ jobs:
       VK_OAUTH2_SECRET: ${{ secrets.VK_OAUTH2_SECRET }}
       TG_TOKEN: ${{ secrets.TG_TOKEN }}
     steps:
-      - name: clone code
+      - name: clone cod
         uses: actions/checkout@v2
       - name: render docker-compose
         run:  | 
