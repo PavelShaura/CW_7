@@ -10,9 +10,14 @@ Powered by Django Rest framework, Postgres and Docker.
 > http://coder.pp.ru/auth
 > 
 > admin: http://coder.pp.ru/admin/
+> 
 
+## **Telegram bot:**
 
-
+ You can link a Telegram account to an application account and get or create all the user's goals.
+ 
+ > Bot telegram https://t.me/kanban_my_bot
+ 
 ## **Board:**
 
 The board is divided into 3 columns by status.
