@@ -121,7 +121,7 @@ There is a separate interface for working with categories:
 
 **1. Create virtual environment**
 
-**2. Install dependencies from requirements.dev.txt**
+**2. Install dependencies from requirements.txt**
 
 > pip install -r todolist/requirements.dev.txt
 > 
