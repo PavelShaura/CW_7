@@ -193,13 +193,7 @@ compose file: deploy/docker-compose.ci.yaml
 env variables: deploy/.ci_env
 variables in compose and env files are replaced with github secrets***
 
-**3. Docker hub images:**
-
-> ***front: sermalenk/skypro-front:lesson-38***
-
-> ***back: pshaura/todolist_project:***
-
-**4. To add admin during first launch:**
+**3. To add admin during first launch:**
 
 ***connect to server and access project folder***
 
