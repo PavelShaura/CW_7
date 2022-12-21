@@ -60,6 +60,7 @@ Search:
 You can search by entering the text in the name of the card.
 
 ## **Working with a goal**
+<img width="941" alt="todo" src="https://user-images.githubusercontent.com/104260807/208902732-b8f8ebb8-9815-45fe-ab7d-72c6cd5b752c.png">
 
 Clicking on the card opens the detailed view of the goal screen. On it , the user can:
 
