@@ -20,6 +20,10 @@ Powered by Django Rest framework, Postgres, docker-compose and OAuth with social
  You can link a Telegram account to an application account and get or create all the user's goals.
  
  > Bot telegram https://t.me/app_todo_bot
+
+## **Board sharing:**
+
+Users can edit/view goal sets together.
  
 ## **Board:**
 
