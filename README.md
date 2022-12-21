@@ -11,6 +11,8 @@ Powered by Django Rest framework, Postgres and Docker.
 > 
 > admin: http://coder.pp.ru/admin/
 > 
+<img width="957" alt="category" src="https://user-images.githubusercontent.com/104260807/208902483-8047b8e5-7580-45e8-820a-2cac31bafba8.png">
+
 
 ## **Telegram bot:**
 
