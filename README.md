@@ -193,7 +193,7 @@ variables in compose and env files are replaced with github secrets***
 
 **3. Docker hub images:**
 
-> ***front: sermalenk/skypro-front:lesson-36***
+> ***front: sermalenk/skypro-front:lesson-38***
 
 > ***back: pshaura/todolist_project:***
 
