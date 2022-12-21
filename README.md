@@ -11,7 +11,7 @@ Powered by Django Rest framework, Postgres, docker-compose and OAuth with social
 > 
 > admin: http://coder.pp.ru/admin/
 > 
-<img width="957" alt="category" src="https://user-images.githubusercontent.com/104260807/208902483-8047b8e5-7580-45e8-820a-2cac31bafba8.png">
+<img width="929" alt="auth" src="https://user-images.githubusercontent.com/104260807/208913976-63d81b76-548d-4987-89ec-7281bbbc0e8b.png">
 
 
 ## **Telegram bot:**
