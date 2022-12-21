@@ -1,4 +1,4 @@
-# TODOLIST PROJECT
+# **TODOLIST PROJECT**
 
 Powered by Django Rest framework, Postgres, docker-compose and OAuth with social-auth.
  
