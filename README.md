@@ -92,6 +92,8 @@ Work with comments:
 
 Comments are needed to add notes, links, files, photos, and anything on the topic to the goal.
 
+<img width="916" alt="comments" src="https://user-images.githubusercontent.com/104260807/208911844-9c700208-34fb-401d-b025-ec58c519fba2.png">
+
 Create comments.
 Edit comments.
 Delete comments.
