@@ -5,6 +5,7 @@ Powered by Django Rest framework, Postgres, docker-compose and OAuth with social
 ## The functionality of the program:
 
 > ### ***The graphical user interface for working with goals is a board, where each goal is a card on this board.***
+
 > **Addresses:**
 
 > http://coder.pp.ru/auth
