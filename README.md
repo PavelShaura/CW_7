@@ -15,12 +15,6 @@ Powered by Django Rest framework, Postgres, docker-compose and OAuth with social
 <img width="929" alt="auth" src="https://user-images.githubusercontent.com/104260807/208913976-63d81b76-548d-4987-89ec-7281bbbc0e8b.png">
 
 
-## **Telegram bot:**
-
- You can link a Telegram account to an application account and get or create all the user's goals.
- 
- > Bot telegram https://t.me/app_todo_bot
-
 ## **Board sharing:**
 
 Users can edit/view goal sets together.
